@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>المنصة الرقمية لمنحة التمدرس (5000 دج) - وزارة التربية الوطنية</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts - Cairo -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+    <!-- JsBarcode & QRCode libraries -->
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.5/dist/JsBarcode.all.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dzGreen: {
+                            DEFAULT: '#006633',
+                            dark: '#004d26',
+                            light: '#e6f0eb'
+                        },
+                        dzRed: '#d21034',
+                        dzGold: '#d4af37',
+                    },
+                    fontFamily: {
+                        cairo: ['Cairo', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #f8fafc;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #006633;
+            border-radius: 4px;
+        }
+
+        /* Print Specific Styles */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            .print-only {
+                display: block !important;
+            }
+            body {
+                background-color: #fff !important;
+                color: #000 !important;
+            }
+            .page-break {
+                page-break-after: always;
+            }
+            .printable-card {
+                box-shadow: none !important;
+                border: 1px solid #ccc !important;
+            }
+        }
+        .print-only {
+            display: none;
+        }
+
+        /* Maintenance Page Styles */
+        .maintenance-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 9999;
+            background: linear-gradient(135deg, #004d26 0%, #006633 50%, #0a3d1f 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        .maintenance-card {
+            background: white;
+            border-radius: 1.5rem;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
+            max-width: 520px;
+            width: 90%;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .maintenance-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, #006633, #d4af37, #d21034);
+        }
+        .gear {
+            animation: spin 8s linear infinite;
+        }
+        @keyframes spin {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .pulse-dot {
+            animation: pulse 2s ease-in-out infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; transform: scale(1); }
+            50% { opacity: 0.5; transform: scale(1.2); }
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 antialiased min-h-screen flex flex-col justify-between">
+
+    <!-- ============================================================ -->
+    <!-- صفحة الصيانة التامة (الظاهرة حالياً) -->
+    <!-- ============================================================ -->
+    <div class="maintenance-overlay no-print">
+        <div class="maintenance-card">
+            <!-- أيقونة الصيانة -->
+            <div class="mb-6 relative inline-block">
+                <div class="w-24 h-24 bg-dzGreen/10 rounded-full flex items-center justify-center mx-auto border-4 border-dzGreen/20">
+                    <i class="fa-solid fa-gears text-5xl text-dzGreen gear"></i>
+                </div>
+                <div class="absolute -top-1 -right-1 w-6 h-6 bg-amber-400 rounded-full flex items-center justify-center pulse-dot">
+                    <i class="fa-solid fa-wrench text-white text-xs"></i>
+                </div>
+            </div>
+
+            <!-- العنوان -->
+            <h1 class="text-2xl sm:text-3xl font-black text-slate-900 mb-2 leading-tight">
+                المنصة قيد الصيانة التامة
+            </h1>
+            <p class="text-sm text-slate-500 font-semibold mb-6">
+                منصة منحة التمدرس الخاصة (5000 دج)
+            </p>
+
+            <!-- الرسالة -->
+            <div class="bg-dzGreen-light border border-dzGreen/20 rounded-xl p-4 mb-6 text-right">
+                <p class="text-sm text-slate-700 leading-relaxed">
+                    <i class="fa-solid fa-circle-info text-dzGreen ml-1"></i>
+                    نعتذر عن الإزعاج. نقوم حالياً بأعمال صيانة وتحديث شاملة على المنصة الرقمية لضمان أفضل تجربة استخدام وسلامة البيانات.
+                </p>
+            </div>
+
+            <!-- معلومات إضافية -->
+            <div class="space-y-3 text-xs text-slate-600 mb-8">
+                <div class="flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-clock text-dzGreen"></i>
+                    <span>المدة المتوقعة: سيتم الإعلان عن موعد العودة قريباً</span>
+                </div>
+                <div class="flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-shield-halved text-dzGreen"></i>
+                    <span>جميع البيانات محفوظة بأمان ولا داعي للقلق</span>
+                </div>
+            </div>
+
+            <!-- الشعار الوطني -->
+            <div class="border-t border-slate-100 pt-5">
+                <div class="flex items-center justify-center gap-2 text-dzGreen font-bold text-sm mb-1">
+                    <i class="fa-solid fa-star-and-crescent text-dzRed"></i>
+                    <span>الجمهورية الجزائرية الديمقراطية الشعبية</span>
+                </div>
+                <p class="text-[11px] text-slate-500 font-semibold">
+                    وزارة التربية الوطنية – البوابة الرقمية الموحدة
+                </p>
+                <p class="text-[10px] text-slate-400 mt-2">
+                    © 2026 – جميع الحقوق محفوظة
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ============================================================ -->
+    <!-- الكود الأصلي الكامل (مخفي حالياً – جاهز للاستعادة) -->
+    <!-- ============================================================ -->
+
+    <!-- Header / Navbar (No Print) -->
+    <header class="no-print bg-white border-b border-slate-200 sticky top-0 z-40 shadow-sm hidden">
+        <!-- Top National Bar -->
+        <div class="bg-dzGreen text-white text-xs py-1.5 px-4 text-center font-bold flex justify-between items-center max-w-7xl mx-auto">
+            <span class="flex items-center gap-2"><i class="fa-solid font-bold fa-star-and-crescent text-dzRed"></i> الجمهورية الجزائرية الديمقراطية الشعبية</span>
+            <span class="hidden sm:inline">وزارة التربية الوطنية - البوابة الرقمية الموحدة</span>
+            <span id="currentDate" class="text-slate-200"></span>
+        </div>
+
+        <!-- Main Navigation Bar -->
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3 flex flex-wrap justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+                <div class="w-12 h-12 rounded-full bg-dzGreen/10 flex items-center justify-center border border-dzGreen/30 text-dzGreen font-bold text-xl">
+                    <i class="fa-solid fa-graduation-cap text-dzGreen"></i>
+                </div>
+                <div>
+                    <h1 class="font-extrabold text-lg sm:text-xl text-slate-900 leading-tight">منصة منحة التمدرس الخاصـة (5000 دج)</h1>
+                    <p class="text-xs text-slate-500 font-semibold">إدارة وطلب الفحوصات والتعويضات الدراسية للأبناء المعوزين</p>
+                </div>
+            </div>
+
+            <!-- Role Selector Tabs -->
+            <div class="flex bg-slate-100 p-1 rounded-xl border border-slate-200 w-full sm:w-auto">
+                <button onclick="switchPortal('parent')" id="tab-parent" class="flex-1 sm:flex-none px-5 py-2 rounded-lg text-sm font-bold transition-all duration-200 bg-dzGreen text-white shadow-sm flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-user-group"></i> بوابة أولياء الأمور
+                </button>
+                <button onclick="switchPortal('school')" id="tab-school" class="flex-1 sm:flex-none px-5 py-2 rounded-lg text-sm font-bold transition-all duration-200 text-slate-600 hover:text-dzGreen flex items-center justify-center gap-2">
+                    <i class="fa-solid fa-school-flag"></i> إدارة المؤسسة التعليمية
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- MAIN CONTAINER -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-6 flex-grow w-full hidden">
+
+        <!-- ========================================================================= -->
+        <!-- 1. PARENT PORTAL (بوابة أولياء الأمور) -->
+        <!-- ========================================================================= -->
+        <section id="portal-parent" class="space-y-6">
+
+            <!-- Welcome Banner -->
+            <div class="bg-gradient-to-r from-dzGreen-dark to-dzGreen text-white rounded-2xl p-6 shadow-md relative overflow-hidden no-print">
+                <div class="relative z-10 max-w-3xl">
+                    <span class="inline-block bg-dzGold text-slate-900 text-xs font-bold px-3 py-1 rounded-full mb-3 shadow">الدورة الدراسية 2026/2027</span>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold mb-2">تسجيل وطلب المنحة المدرسية الخاصة (5000 دج)</h2>
+                    <p class="text-slate-100 text-sm leading-relaxed mb-4">
+                        يمكن للولي الشرعي للتلميذ تقديم طلب الاستفادة، رفع الوثائق الثبوتية، متابعة حالة الطلب وطباعة استمارة التسجيل الرسمية المعتمذة بكل سهولة.
+                    </p>
+                    <div class="flex flex-wrap gap-3">
+                        <button onclick="scrollToForm()" class="bg-white text-dzGreen font-bold px-5 py-2.5 rounded-xl text-sm hover:bg-slate-100 transition shadow-sm flex items-center gap-2">
+                            <i class="fa-solid fa-file-circle-plus"></i> تقديم طلب جديد
+                        </button>
+                        <button onclick="openParentTrackingModal()" class="bg-dzGreen-dark/60 backdrop-blur-md border border-white/30 text-white font-bold px-5 py-2.5 rounded-xl text-sm hover:bg-dzGreen-dark transition flex items-center gap-2">
+                            <i class="fa-solid fa-magnifying-glass"></i> متابعة طلب سابق
+                        </button>
+                    </div>
+                </div>
+                <div class="absolute -left-10 -bottom-10 opacity-15 text-white pointer-events-none">
+                    <i class="fa-solid fa-school text-[220px]"></i>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+
+                <!-- Application Form -->
+                <div class="lg:col-span-2 bg-white rounded-2xl border border-slate-200 shadow-sm p-6" id="form-section">
+                    <div class="flex items-center justify-between border-b border-slate-100 pb-4 mb-5">
+                        <h3 class="font-bold text-lg text-slate-900 flex items-center gap-2">
+                            <i class="fa-solid fa-pen-to-square text-dzGreen"></i> استمارة تسجيل طلب المنحة
+                        </h3>
+                        <span class="text-xs text-slate-500 font-semibold">* جميع الحقول المرجوة إجبارية</span>
+                    </div>
+
+                    <form id="grantForm" onsubmit="handleFormSubmit(event)" class="space-y-6">
+
+                        <!-- Step 1: Parent Information -->
+                        <div>
+                            <h4 class="text-sm font-bold text-dzGreen mb-3 bg-dzGreen-light p-2 rounded-lg flex items-center gap-2">
+                                <i class="fa-solid fa-user-shield"></i> 1. معلومات الولي أو الوصي الشرعي
+                            </h4>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 mb-1">الاسم واللقب للولي</label>
+                                    <input type="text" id="parentName" required placeholder="مثال: محمد بن علي" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-dzGreen text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 mb-1">رقم التعريف الوطني (NIN)</label>
+                                    <input type="text" id="parentNIN" required maxlength="18" placeholder="18 رقم المدون في بطاقة التعريف" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-dzGreen text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 mb-1">الوضعية الاجتماعية / المهنية</label>
+                                    <select id="parentStatus" required class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-dzGreen text-sm">
+                                        <option value="">اختر الوضعية...</option>
+                                        <option value="بطال / بدون دخل">بطال / بدون دخل ثابت</option>
+                                        <option value="عامل بأجر يقل عن الحد الأدنى">عامل بأجر يقل عن الحد الأدنى (SNMG)</option>
+                                        <option value="يتيم الأم/الأب">يتيم / تكفل عائلي</option>
+                                        <option value="ذوي الاحتياجات الخاصة">من ذوي الاحتياجات الخاصة</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 mb-1">رقم الهاتف للولي</label>
+                                    <input type="tel" id="parentPhone" required placeholder="06XXXXXXXX" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-dzGreen text-sm">
+                                </div>
+                                <div class="sm:col-span-2">
+                                    <label class="block text-xs font-bold text-slate-700 mb-1">رقم الحساب البريدي الجاري (CCP)</label>
+                                    <div class="flex gap-2">
+                                        <input type="text" id="parentCCP" required placeholder="رقم الحساب الحساب البريدي" class="flex-1 px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-dzGreen text-sm">
+                                        <input type="text" id="parentKey" required placeholder="المفتاح (Key)" maxlength="2" class="w-24 px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-dzGreen text-sm text-center">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 2: Student Information -->
+                        <div>
+                            <h4 class="text-sm font-bold text-dzGreen mb-3 bg-dzGreen-light p-2 rounded-lg flex items-center gap-2">
+                                <i class="fa-solid fa-child"></i> 2. معلومات التلميذ المتمدرس
+                            </h4>
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 mb-1">اسم التلميذ ولقبه</label>
+                                    <input type="text" id="studentName" required placeholder="اسم التلميذ الكامل" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-dzGreen text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 mb-1">رقم التعريف المدرسي (رمز مسار/رقم التلميذ)</label>
+                                    <input type="text" id="studentID" required placeholder="رقم التلميذ الرقمي" class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-dzGreen text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 mb-1">المرحلة والمستوى الدراسي</label>
+                                    <select id="studentLevel" required class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-dzGreen text-sm">
+                                        <option value="">اختر المستوى...</option>
+                                        <option value="ابتدائي - سنة الأولى">ابتدائي - سنة أولى</option>
+                                        <option value="ابتدائي - سنة الخامسة">ابتدائي - سنة خامسة</option>
+                                        <option value="متوسط - سنة الأولى">متوسط - سنة أولى</option>
+                                        <option value="متوسط - سنة الرابعة">متوسط - سنة رابعة</option>
+                                        <option value="ثانوي - سنة الأولى">ثانوي - سنة أولى</option>
+                                        <option value="ثانوي - سنة الثالثة">ثانوي - سنة ثالثة</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-bold text-slate-700 mb-1">المؤسسة التعليمية المسجل بها</label>
+                                    <select id="schoolName" required class="w-full px-3.5 py-2.5 rounded-xl border border-slate-300 focus:outline-none focus:ring-2 focus:ring-dzGreen text-sm">
+                                        <option value="مدرسة الأمير عبد القادر الابتدائية">مدرسة الأمير عبد القادر الابتدائية (الجزائر العاصمة)</option>
+                                        <option value="متوسطة البشير الإبراهيمي">متوسطة البشير الإبراهيمي (الجزائر العاصمة)</option>
+                                        <option value="ثانوية العربي بن مهيدي">ثانوية العربي بن مهيدي (الجزائر العاصمة)</option>
+                                        <option value="مدرسة ابن خلدون الابتدائية">مدرسة ابن خلدون الابتدائية (وهران)</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Step 3: Document Upload & Preview Section -->
+                        <div>
+                            <h4 class="text-sm font-bold text-dzGreen mb-3 bg-dzGreen-light p-2 rounded-lg flex items-center justify-between">
+                                <span class="flex items-center gap-2"><i class="fa-solid fa-file-arrow-up"></i> 3. رفع معاينة الوثائق الإدارية المرفقة</span>
+                                <span class="text-xs font-normal text-slate-600">(صيغة PNG, JPG أو PDF)</span>
+                            </h4>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+
+                                <!-- Upload Item 1 -->
+                                <div class="border border-dashed border-slate-300 rounded-xl p-3 bg-slate-50 text-center hover:border-dzGreen transition">
+                                    <i class="fa-solid fa-id-card text-slate-400 text-2xl mb-1"></i>
+                                    <p class="text-xs font-bold text-slate-700">بطاقة التعريف الوطنية للولي</p>
+                                    <input type="file" id="docIdentity" accept="image/*" class="hidden" onchange="previewUploadDoc(this, 'previewIdentity')">
+                                    <button type="button" onclick="document.getElementById('docIdentity').click()" class="mt-2 text-xs bg-dzGreen/10 text-dzGreen font-bold px-3 py-1.5 rounded-lg hover:bg-dzGreen hover:text-white transition w-full">
+                                        اختيار الملف
+                                    </button>
+                                    <div id="previewIdentity" class="mt-2 text-xs font-bold text-dzGreen hidden flex items-center justify-center gap-1">
+                                        <i class="fa-solid fa-check-circle"></i> تم اختيار الوثيقة
+                                        <button type="button" onclick="viewDocumentModal('بطاقة التعريف الوطنية', 'previewIdentity')" class="text-blue-600 underline text-xs mr-2">معاينة</button>
+                                    </div>
+                                </div>
+
+                                <!-- Upload Item 2 -->
+                                <div class="border border-dashed border-slate-300 rounded-xl p-3 bg-slate-50 text-center hover:border-dzGreen transition">
+                                    <i class="fa-solid fa-file-invoice text-slate-400 text-2xl mb-1"></i>
+                                    <p class="text-xs font-bold text-slate-700">كشف الدخل / شهادة عدم العمل</p>
+                                    <input type="file" id="docIncome" accept="image/*" class="hidden" onchange="previewUploadDoc(this, 'previewIncome')">
+                                    <button type="button" onclick="document.getElementById('docIncome').click()" class="mt-2 text-xs bg-dzGreen/10 text-dzGreen font-bold px-3 py-1.5 rounded-lg hover:bg-dzGreen hover:text-white transition w-full">
+                                        اختيار الملف
+                                    </button>
+                                    <div id="previewIncome" class="mt-2 text-xs font-bold text-dzGreen hidden flex items-center justify-center gap-1">
+                                        <i class="fa-solid fa-check-circle"></i> تم اختيار الوثيقة
+                                        <button type="button" onclick="viewDocumentModal('كشف الدخل / عدم العمل', 'previewIncome')" class="text-blue-600 underline text-xs mr-2">معاينة</button>
+                                    </div>
+                                </div>
+
+                                <!-- Upload Item 3 -->
+                                <div class="border border-dashed border-slate-300 rounded-xl p-3 bg-slate-50 text-center hover:border-dzGreen transition">
+                                    <i class="fa-solid fa-file-signature text-slate-400 text-2xl mb-1"></i>
+                                    <p class="text-xs font-bold text-slate-700">صك بريدي مشطوب (RIP)</p>
+                                    <input type="file" id="docCCP" accept="image/*" class="hidden" onchange="previewUploadDoc(this, 'previewCCP')">
+                                    <button type="button" onclick="document.getElementById('docCCP').click()" class="mt-2 text-xs bg-dzGreen/10 text-dzGreen font-bold px-3 py-1.5 rounded-lg hover:bg-dzGreen hover:text-white transition w-full">
+                                        اختيار الملف
+                                    </button>
+                                    <div id="previewCCP" class="mt-2 text-xs font-bold text-dzGreen hidden flex items-center justify-center gap-1">
+                                        <i class="fa-solid fa-check-circle"></i> تم اختيار الوثيقة
+                                        <button type="button" onclick="viewDocumentModal('الصك البريدي', 'previewCCP')" class="text-blue-600 underline text-xs mr-2">معاينة</button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+
+                        <!-- Form Actions -->
+                        <div class="pt-3 border-t border-slate-100 flex flex-wrap gap-3 justify-end">
+                            <button type="button" onclick="resetForm()" class="px-4 py-2.5 rounded-xl border border-slate-300 text-slate-600 text-sm font-bold hover:bg-slate-100 transition">
+                                إغلاق/إلغاء
+                            </button>
+                            <button type="submit" class="px-6 py-2.5 rounded-xl bg-dzGreen text-white text-sm font-bold shadow-md hover:bg-dzGreen-dark transition flex items-center gap-2">
+                                <i class="fa-solid fa-paper-plane"></i> إرسال وتأكيد الطلب
+                            </button>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Right Sidebar (Help & Direct Print Receipt Preview) -->
+                <div class="space-y-6">
+
+                    <!-- Info Box -->
+                    <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5">
+                        <h4 class="font-bold text-slate-900 border-b border-slate-100 pb-3 mb-3 flex items-center gap-2">
+                            <i class="fa-solid fa-circle-info text-dzRed"></i> شروط الاستفادة القانونية
+                        </h4>
+                        <ul class="text-xs text-slate-600 space-y-2.5 list-disc list-inside leading-relaxed">
+                            <li>أن يكون التلميذ مسجلاً بانتظام في إحدى المؤسسات التعليمية العمومية.</li>
+                            <li>الدخل الشهري للولي لا يتجاوز الحد الأدنى للأجور (20,000 دج).</li>
+                            <li>تكون الأولوية للأيتام والفئات المعوزة وذوي الهمم.</li>
+                            <li>صحة المعلومات المسرح بها تحت المسؤولية الجزائية والتنفيذية.</li>
+                        </ul>
+                    </div>
+
+                    <!-- Receipt Preview / Printable Card Quick Access -->
+                    <div id="receiptCard" class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 border-t-4 border-t-dzGreen hidden">
+                        <div class="text-center pb-3 border-b border-slate-100">
+                            <span class="bg-emerald-100 text-emerald-800 text-[10px] font-bold px-2 py-0.5 rounded-full">تم التسجيل بنجاح</span>
+                            <h4 class="font-bold text-slate-900 mt-2">وصل ايداع الطلب الرقمي</h4>
+                            <p class="text-xs text-slate-500 font-mono mt-1" id="receiptID">REQ-2026-998</p>
+                        </div>
+
+                        <div class="py-3 text-xs space-y-2">
+                            <div class="flex justify-between"><span class="text-slate-500">اسم التلميذ:</span> <span id="rStudent" class="font-bold"></span></div>
+                            <div class="flex justify-between"><span class="text-slate-500">اسم الولي:</span> <span id="rParent" class="font-bold"></span></div>
+                            <div class="flex justify-between"><span class="text-slate-500">المؤسسة:</span> <span id="rSchool" class="font-bold"></span></div>
+                            <div class="flex justify-between"><span class="text-slate-500">تاريخ الطلب:</span> <span id="rDate" class="font-bold"></span></div>
+                            <div class="flex justify-between"><span class="text-slate-500">الحالة:</span> <span class="bg-yellow-100 text-yellow-800 text-[10px] font-bold px-2 py-0.5 rounded">قيد الدراسة</span></div>
+                        </div>
+
+                        <div class="pt-3 border-t border-slate-100 flex flex-col gap-2">
+                            <button onclick="printOfficialPDF()" class="w-full bg-dzGreen text-white text-xs font-bold py-2.5 rounded-xl hover:bg-dzGreen-dark transition flex items-center justify-center gap-2">
+                                <i class="fa-solid fa-print"></i> طباعة الوصل الرسمي (PDF)
+                            </button>
+                            <button onclick="openParentTrackingModal()" class="w-full border border-slate-200 text-slate-700 text-xs font-bold py-2 rounded-xl hover:bg-slate-50 transition">
+                                متابعة التفاصيل
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ========================================================================= -->
+        <!-- 2. SCHOOL ADMINISTRATION PORTAL (بوابة إدارة المؤسسة التعليمية) -->
+        <!-- ========================================================================= -->
+        <section id="portal-school" class="space-y-6 hidden">
+
+            <!-- School Header Banner -->
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm p-5 flex flex-wrap justify-between items-center gap-4">
+                <div class="flex items-center gap-4">
+                    <div class="w-14 h-14 bg-dzGreen/10 rounded-2xl flex items-center justify-center text-dzGreen font-bold text-2xl border border-dzGreen/20">
+                        <i class="fa-solid fa-school"></i>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-2">
+                            <h2 class="text-xl font-extrabold text-slate-900" id="currentSchoolTitle">مدرسة الأمير عبد القادر الابتدائية</h2>
+                            <span class="bg-dzGreen/10 text-dzGreen border border-dzGreen/20 text-xs font-bold px-2.5 py-0.5 rounded-full">حساب المدير المباشر</span>
+                        </div>
+                        <p class="text-xs text-slate-500 mt-0.5">رمز المؤسسة: 16040921 | الدورة: 2026/2027 | ولاية الجزائر</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-2 no-print">
+                    <button onclick="printFullSchoolList()" class="bg-dzGreen text-white text-xs font-bold px-4 py-2.5 rounded-xl hover:bg-dzGreen-dark transition flex items-center gap-2 shadow-sm">
+                        <i class="fa-solid fa-print"></i> طباعة القائمة الكلية للمستفيدين
+                    </button>
+                    <button onclick="exportToCSV()" class="border border-slate-300 text-slate-700 text-xs font-bold px-3.5 py-2.5 rounded-xl hover:bg-slate-100 transition flex items-center gap-1.5">
+                        <i class="fa-solid fa-file-excel text-emerald-600"></i> تصدير البيانات
+                    </button>
+                </div>
+            </div>
+
+            <!-- Analytics Dashboard Stats -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                    <div class="flex justify-between items-center text-slate-500 text-xs font-bold mb-1">
+                        <span>إجمالي الطلبات</span>
+                        <i class="fa-solid fa-folder-open text-blue-500"></i>
+                    </div>
+                    <div class="text-2xl font-black text-slate-900" id="statTotal">0</div>
+                    <span class="text-[10px] text-slate-400">كافة الطلبات المسجلة</span>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                    <div class="flex justify-between items-center text-slate-500 text-xs font-bold mb-1">
+                        <span>الطلبات المقبولة</span>
+                        <i class="fa-solid fa-circle-check text-emerald-500"></i>
+                    </div>
+                    <div class="text-2xl font-black text-emerald-600" id="statApproved">0</div>
+                    <span class="text-[10px] text-slate-400">مصادق عليها نهائياً</span>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                    <div class="flex justify-between items-center text-slate-500 text-xs font-bold mb-1">
+                        <span>قيد الدراسة والتحقق</span>
+                        <i class="fa-solid fa-hourglass-half text-amber-500"></i>
+                    </div>
+                    <div class="text-2xl font-black text-amber-500" id="statPending">0</div>
+                    <span class="text-[10px] text-slate-400">تنتظر مراجعة الإدارة</span>
+                </div>
+                <div class="bg-white p-4 rounded-xl border border-slate-200 shadow-sm">
+                    <div class="flex justify-between items-center text-slate-500 text-xs font-bold mb-1">
+                        <span>مرفوضة / استكمال</span>
+                        <i class="fa-solid fa-circle-xmark text-dzRed"></i>
+                    </div>
+                    <div class="text-2xl font-black text-dzRed" id="statRejected">0</div>
+                    <span class="text-[10px] text-slate-400">ملفات ناقصة أو مرفوضة</span>
+                </div>
+            </div>
+
+            <!-- Table & Filters Section -->
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-sm overflow-hidden">
+
+                <!-- Table Header Controls -->
+                <div class="p-4 bg-slate-50/70 border-b border-slate-200 flex flex-wrap gap-3 items-center justify-between no-print">
+                    <div class="flex items-center gap-2 flex-1 min-w-[240px]">
+                        <div class="relative w-full">
+                            <i class="fa-solid fa-search absolute right-3 top-3 text-slate-400 text-xs"></i>
+                            <input type="text" id="schoolSearch" oninput="filterSchoolTable()" placeholder="بحث باسم الطالب، اسم الولي، أو رقم الملف..." class="w-full pr-8 pl-3 py-2 text-xs border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-dzGreen">
+                        </div>
+                    </div>
+
+                    <div class="flex items-center gap-2">
+                        <select id="statusFilter" onchange="filterSchoolTable()" class="px-3 py-2 border border-slate-300 rounded-xl text-xs font-bold focus:outline-none focus:ring-2 focus:ring-dzGreen">
+                            <option value="ALL">جميع الحالات</option>
+                            <option value="مقبول">المقبولة فقط</option>
+                            <option value="قيد الدراسة">قيد الدراسة</option>
+                            <option value="مرفوض">المرفوضة</option>
+                        </select>
+                    </div>
+                </div>
+
+                <!-- Applications Table -->
+                <div class="overflow-x-auto">
+                    <table class="w-full text-right text-xs">
+                        <thead class="bg-slate-100 text-slate-700 font-bold border-b border-slate-200 uppercase">
+                            <tr>
+                                <th class="p-3.5">رمز الطلب</th>
+                                <th class="p-3.5">اسم التلميذ والمستوى</th>
+                                <th class="p-3.5">اسم الولي والوضعية</th>
+                                <th class="p-3.5">رقم الحساب البريدي (CCP)</th>
+                                <th class="p-3.5">تاريخ التقديم</th>
+                                <th class="p-3.5">الحالة الحالية</th>
+                                <th class="p-3.5 text-center no-print">التحكم والإجراءات</th>
+                            </tr>
+                        </thead>
+                        <tbody id="schoolTableBody" class="divide-y divide-slate-200 font-medium text-slate-800">
+                            <!-- Dynamic Content Inserted JS -->
+                        </tbody>
+                    </table>
+                </div>
+
+                <!-- Empty State -->
+                <div id="emptySchoolState" class="hidden p-8 text-center text-slate-400">
+                    <i class="fa-solid fa-folder-open text-4xl mb-2"></i>
+                    <p class="text-sm">لا توجد طلبات تطابق معايير البحث الحالية.</p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <!-- Footer (No Print) -->
+    <footer class="no-print bg-white border-t border-slate-200 py-4 mt-8 hidden">
+        <div class="max-w-7xl mx-auto px-4 text-center text-xs text-slate-500 space-y-1">
+            <p class="font-bold text-slate-700">الجمهورية الجزائرية الديمقراطية الشعبية - وزارة التربية الوطنية © 2026</p>
+            <p>جميع الحقوق محفوظة للمديرية العامة للمفهوم والدعم المدرسي والأنظمة الرقمية</p>
+        </div>
+    </footer>
+
+    <!-- ========================================================================= -->
+    <!-- MODALS SECTION -->
+    <!-- ========================================================================= -->
+
+    <!-- Document Viewer Modal -->
+    <div id="docViewerModal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden flex items-center justify-center p-4 no-print">
+        <div class="bg-white rounded-2xl max-w-lg w-full overflow-hidden shadow-2xl animate-fade-in">
+            <div class="bg-slate-100 px-4 py-3 border-b border-slate-200 flex justify-between items-center">
+                <h3 class="font-bold text-slate-900 text-sm flex items-center gap-2" id="docViewerTitle">
+                    <i class="fa-solid fa-file-lines text-dzGreen"></i> معاينة الوثيقة المرفقة
+                </h3>
+                <button onclick="closeModal('docViewerModal')" class="text-slate-400 hover:text-dzRed font-bold text-lg">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="p-6 text-center">
+                <!-- Mock document rendering -->
+                <div class="border-2 border-dashed border-slate-300 rounded-xl p-6 bg-slate-50 min-h-[220px] flex flex-col items-center justify-center">
+                    <i class="fa-solid fa-file-pdf text-dzRed text-5xl mb-3"></i>
+                    <p class="text-xs font-bold text-slate-800 mb-1" id="docViewerFileName">وثيقة رسمية مؤكدة</p>
+                    <span class="text-[10px] text-emerald-600 bg-emerald-50 border border-emerald-200 font-bold px-2 py-0.5 rounded-full mb-3">
+                        <i class="fa-solid fa-shield-check"></i> الوثيقة مرفوعة ومفحوصة أمنياً
+                    </span>
+                    <p class="text-[11px] text-slate-500">تم التحقق من تطابق الرقم مع قاعدة بيانات الحالة المدنية.</p>
+                </div>
+            </div>
+            <div class="bg-slate-50 px-4 py-3 border-t border-slate-200 flex justify-end">
+                <button onclick="closeModal('docViewerModal')" class="bg-slate-800 text-white font-bold text-xs px-4 py-2 rounded-xl hover:bg-slate-700 transition">إغلاق المعاينة</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Review Application Modal (School Admin Action) -->
+    <div id="reviewModal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden flex items-center justify-center p-4 no-print">
+        <div class="bg-white rounded-2xl max-w-2xl w-full overflow-hidden shadow-2xl">
+            <div class="bg-dzGreen text-white px-5 py-3.5 flex justify-between items-center">
+                <h3 class="font-bold text-base flex items-center gap-2">
+                    <i class="fa-solid fa-clipboard-check"></i> معاينة ومعالجة طلب المنحة
+                </h3>
+                <button onclick="closeModal('reviewModal')" class="text-white/80 hover:text-white font-bold text-lg">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="p-6 space-y-4 text-xs">
+                <!-- Info Header -->
+                <div class="grid grid-cols-2 gap-4 bg-slate-50 p-3 rounded-xl border border-slate-200">
+                    <div><span class="text-slate-500">رقم الطلب:</span> <span id="mReqID" class="font-bold font-mono"></span></div>
+                    <div><span class="text-slate-500">اسم التلميذ:</span> <span id="mStudentName" class="font-bold"></span></div>
+                    <div><span class="text-slate-500">اسم الولي:</span> <span id="mParentName" class="font-bold"></span></div>
+                    <div><span class="text-slate-500">الوضعية الاجتماعية:</span> <span id="mStatus" class="font-bold text-dzGreen"></span></div>
+                    <div><span class="text-slate-500">الحساب البريدي:</span> <span id="mCCP" class="font-bold font-mono"></span></div>
+                    <div><span class="text-slate-500">المستوى:</span> <span id="mLevel" class="font-bold"></span></div>
+                </div>
+
+                <!-- Documents attached grid -->
+                <div>
+                    <h4 class="font-bold text-slate-800 mb-2">الوثائق المرفوعة للمعاينة:</h4>
+                    <div class="grid grid-cols-3 gap-2">
+                        <button onclick="viewDocumentModal('بطاقة التعريف', 'm1')" class="p-2 border border-slate-200 rounded-lg bg-white hover:border-dzGreen text-center">
+                            <i class="fa-solid fa-id-card text-dzGreen mb-1 block text-base"></i>
+                            <span>بطاقة التعريف</span>
+                        </button>
+                        <button onclick="viewDocumentModal('شهادة كشف الدخل', 'm2')" class="p-2 border border-slate-200 rounded-lg bg-white hover:border-dzGreen text-center">
+                            <i class="fa-solid fa-file-invoice text-dzGreen mb-1 block text-base"></i>
+                            <span>كشف الدخل/عدم العمل</span>
+                        </button>
+                        <button onclick="viewDocumentModal('الصك البريدي', 'm3')" class="p-2 border border-slate-200 rounded-lg bg-white hover:border-dzGreen text-center">
+                            <i class="fa-solid fa-money-check text-dzGreen mb-1 block text-base"></i>
+                            <span>الصك البريدي RIP</span>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Decision Section -->
+                <div class="pt-2 border-t border-slate-200">
+                    <label class="block font-bold text-slate-800 mb-1">ملاحظات وقرار المؤسسة التعليمية:</label>
+                    <textarea id="adminNotes" rows="2" placeholder="أدخل سبب الرفض أو ملاحظات الاستكمال (في حال وجودها)..." class="w-full p-2.5 border border-slate-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-dzGreen text-xs"></textarea>
+                </div>
+            </div>
+
+            <div class="bg-slate-50 px-5 py-3 border-t border-slate-200 flex flex-wrap justify-end gap-2">
+                <button onclick="updateApplicationStatus('مرفوض')" class="px-4 py-2 bg-dzRed text-white font-bold rounded-xl hover:bg-red-700 transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-xmark"></i> رفض الطلب
+                </button>
+                <button onclick="updateApplicationStatus('قيد الدراسة')" class="px-4 py-2 bg-amber-500 text-white font-bold rounded-xl hover:bg-amber-600 transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-hourglass"></i> طلب استكمال ملف
+                </button>
+                <button onclick="updateApplicationStatus('مقبول')" class="px-5 py-2 bg-dzGreen text-white font-bold rounded-xl hover:bg-dzGreen-dark transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-check"></i> الموافقة والمصادقة
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Parent Tracking Modal -->
+    <div id="parentTrackModal" class="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-sm hidden flex items-center justify-center p-4 no-print">
+        <div class="bg-white rounded-2xl max-w-md w-full overflow-hidden shadow-2xl">
+            <div class="bg-dzGreen text-white px-4 py-3 flex justify-between items-center">
+                <h3 class="font-bold text-sm flex items-center gap-2">
+                    <i class="fa-solid fa-magnifying-glass"></i> الاستعلام ومتابعة حالة الطلب
+                </h3>
+                <button onclick="closeModal('parentTrackModal')" class="text-white hover:text-slate-200 font-bold">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div class="p-5 space-y-4">
+                <div>
+                    <label class="block text-xs font-bold text-slate-700 mb-1">رقم الطلب أو رقم التعريف الوطني للولي (NIN)</label>
+                    <div class="flex gap-2">
+                        <input type="text" id="trackSearchInput" placeholder="مثال: REQ-2026-101" class="flex-1 px-3 py-2 border border-slate-300 rounded-xl text-xs focus:ring-2 focus:ring-dzGreen outline-none">
+                        <button onclick="searchParentRequest()" class="bg-dzGreen text-white px-4 py-2 rounded-xl font-bold text-xs hover:bg-dzGreen-dark">بحث</button>
+                    </div>
+                </div>
+
+                <div id="trackResultArea" class="hidden border-t border-slate-100 pt-3">
+                    <!-- Dynamic Search Result -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- ========================================================================= -->
+    <!-- PRINTABLE OFFICIAL TEMPLATE (إستمارة وطنية رسمية للطباعة PDF) -->
+    <!-- ========================================================================= -->
+    <div id="officialPrintTemplate" class="print-only p-8 bg-white text-black font-cairo">
+        
+        <!-- Header -->
+        <div class="text-center border-b-2 border-black pb-4 mb-6">
+            <h3 class="text-sm font-bold">الجمهورية الجزائرية الديمقراطية الشعبية</h3>
+            <h3 class="text-base font-extrabold mt-1">وزارة التربية الوطنية</h3>
+            <h4 class="text-xs font-semibold mt-0.5">مديرية التربية لولاية الجزائر - مديرية الدعم المدرسي</h4>
+            <div class="mt-3 inline-block border-2 border-black px-6 py-1.5 font-black text-lg bg-gray-100">
+                وصل إيداع واستمارة طلب منحة التمدرس الخاصة (5000 دج)
+            </div>
+        </div>
+
+        <!-- Meta Info -->
+        <div class="flex justify-between text-xs font-bold mb-6 border p-3 border-gray-400 bg-gray-50">
+            <div>رقم التسجيل الرقمي: <span id="pReqID" class="font-mono text-sm">REQ-2026-0000</span></div>
+            <div>تاريخ الإيداع: <span id="pDate">2026/10/28</span></div>
+            <div>الدورة الدراسية: <span>2026/2027</span></div>
+        </div>
+
+        <!-- Section 1: Student & Parent -->
+        <div class="space-y-4 text-xs">
+            <div class="border border-gray-400 p-3">
+                <h4 class="font-bold underline mb-2 text-sm">1. معلومات التلميذ والمؤسسة التعليمية:</h4>
+                <div class="grid grid-cols-2 gap-2">
+                    <p><strong>اسم ولقب التلميذ:</strong> <span id="pStudentName"></span></p>
+                    <p><strong>رقم التعريف المدرسي:</strong> <span id="pStudentID"></span></p>
+                    <p><strong>المستوى والصف الدراسي:</strong> <span id="pStudentLevel"></span></p>
+                    <p><strong>المؤسسة التعليمية:</strong> <span id="pSchoolName"></span></p>
+                </div>
+            </div>
+
+            <div class="border border-gray-400 p-3">
+                <h4 class="font-bold underline mb-2 text-sm">2. معلومات الولي أو الوصي الشرعي:</h4>
+                <div class="grid grid-cols-2 gap-2">
+                    <p><strong>اسم ولقب الولي:</strong> <span id="pParentName"></span></p>
+                    <p><strong>رقم التعريف الوطني (NIN):</strong> <span id="pParentNIN"></span></p>
+                    <p><strong>الوضعية الاجتماعية:</strong> <span id="pParentStatus"></span></p>
+                    <p><strong>رقم الهاتف:</strong> <span id="pParentPhone"></span></p>
+                    <p class="col-span-2"><strong>الحساب البريدي الجاري (CCP):</strong> <span id="pParentCCP" class="font-mono"></span></p>
+                </div>
+            </div>
+
+            <div class="border border-gray-400 p-3">
+                <h4 class="font-bold underline mb-2 text-sm">3. الوثائق المرفقة والمصادق عليها رقمياً:</h4>
+                <ul class="list-disc list-inside space-y-1">
+                    <li>بطاقة التعريف الوطنية للولي الشرعي (مرفقة رقمياً).</li>
+                    <li>شهادة كشف الراتب أو شهادة عدم العمل (مرفقة رقمياً).</li>
+                    <li>صك بريدي مشطوب للولي (مرفق رقمياً).</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- QR Code & Signatures -->
+        <div class="mt-8 flex justify-between items-end border-t border-gray-300 pt-6">
+            <div class="text-center space-y-2">
+                <div id="qrcode" class="flex justify-center"></div>
+                <p class="text-[10px] font-mono">رمز التحقق الرقمي الرسمي</p>
+                <!-- Barcode -->
+                <svg id="barcode" class="mt-1"></svg>
+            </div>
+
+            <div class="text-center text-xs space-y-10">
+                <p class="font-bold">ختم وإمضاء مدير المؤسسة التعليمية</p>
+                <div class="text-gray-400 font-italic">[ حرر بـ .................... في .................... ]</div>
+            </div>
+        </div>
+
+        <div class="mt-12 text-center text-[10px] text-gray-500 border-t pt-2">
+            هذه الوثيقة صادرة إلكترونياً وتعتبر رسمية وبمثابة وصل استلام نهائي لملف منحة التمدرس 5000 دج.
+        </div>
+    </div>
+
+
+    <!-- ========================================================================= -->
+    <!-- JAVASCRIPT LOGIC & MOCK DATA -->
+    <!-- ========================================================================= -->
+    <script>
+        // Sample Initial Database State
+        let applications = [
+            {
+                id: 'REQ-2026-101',
+                studentName: 'ياسين براهيمي',
+                studentID: '102938475',
+                studentLevel: 'ابتدائي - سنة الخامسة',
+                schoolName: 'مدرسة الأمير عبد القادر الابتدائية',
+                parentName: 'أحمد براهيمي',
+                parentNIN: '198516090012345678',
+                parentStatus: 'بطال / بدون دخل',
+                parentPhone: '0661234567',
+                parentCCP: '0012345678 / 45',
+                date: '2026-10-20',
+                status: 'مقبول'
+            },
+            {
+                id: 'REQ-2026-102',
+                studentName: 'مريم زياني',
+                studentID: '987654321',
+                studentLevel: 'متوسط - سنة الأولى',
+                schoolName: 'مدرسة الأمير عبد القادر الابتدائية',
+                parentName: 'عمر زياني',
+                parentNIN: '197816090087654321',
+                parentStatus: 'عامل بأجر يقل عن الحد الأدنى',
+                parentPhone: '0558765432',
+                parentCCP: '0087654321 / 12',
+                date: '2026-10-24',
+                status: 'قيد الدراسة'
+            },
+            {
+                id: 'REQ-2026-103',
+                studentName: 'سارة محرز',
+                studentID: '543216789',
+                studentLevel: 'ابتدائي - سنة الأولى',
+                schoolName: 'مدرسة الأمير عبد القادر الابتدائية',
+                parentName: 'سعاد محرز',
+                parentNIN: '199016090011223344',
+                parentStatus: 'يتيم الأم/الأب',
+                parentPhone: '0770112233',
+                parentCCP: '0055443322 / 99',
+                date: '2026-10-25',
+                status: 'مرفوض'
+            }
+        ];
+
+        let selectedAppId = null;
+
+        // On Page Load Init
+        window.onload = function() {
+            document.getElementById('currentDate').innerText = new Date().toLocaleDateString('ar-DZ', {
+                weekday: 'long', year: 'numeric', month: 'long', day: 'numeric'
+            });
+            renderSchoolTable();
+        };
+
+        // Switch Portals
+        function switchPortal(portal) {
+            const btnParent = document.getElementById('tab-parent');
+            const btnSchool = document.getElementById('tab-school');
+            const secParent = document.getElementById('portal-parent');
+            const secSchool = document.getElementById('portal-school');
+
+            if (portal === 'parent') {
+                btnParent.className = "flex-1 sm:flex-none px-5 py-2 rounded-lg text-sm font-bold transition-all duration-200 bg-dzGreen text-white shadow-sm flex items-center justify-center gap-2";
+                btnSchool.className = "flex-1 sm:flex-none px-5 py-2 rounded-lg text-sm font-bold transition-all duration-200 text-slate-600 hover:text-dzGreen flex items-center justify-center gap-2";
+                secParent.classList.remove('hidden');
+                secSchool.classList.add('hidden');
+            } else {
+                btnSchool.className = "flex-1 sm:flex-none px-5 py-2 rounded-lg text-sm font-bold transition-all duration-200 bg-dzGreen text-white shadow-sm flex items-center justify-center gap-2";
+                btnParent.className = "flex-1 sm:flex-none px-5 py-2 rounded-lg text-sm font-bold transition-all duration-200 text-slate-600 hover:text-dzGreen flex items-center justify-center gap-2";
+                secSchool.classList.remove('hidden');
+                secParent.classList.add('hidden');
+                renderSchoolTable();
+            }
+        }
+
+        // Scroll helper
+        function scrollToForm() {
+            document.getElementById('form-section').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Handle File Upload Preview
+        function previewUploadDoc(input, previewId) {
+            if (input.files && input.files[0]) {
+                document.getElementById(previewId).classList.remove('hidden');
+            }
+        }
+
+        // Document Modal View
+        function viewDocumentModal(title, docKey) {
+            document.getElementById('docViewerTitle').innerHTML = `<i class="fa-solid fa-file-lines text-dzGreen"></i> معاينة وثيقة: ${title}`;
+            document.getElementById('docViewerFileName').innerText = `${title} - ملف مرفوع إلكترونياً.pdf`;
+            document.getElementById('docViewerModal').classList.remove('hidden');
+        }
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.add('hidden');
+        }
+
+        // Parent Submit Form
+        function handleFormSubmit(event) {
+            event.preventDefault();
+
+            const newId = 'REQ-2026-' + Math.floor(100 + Math.random() * 900);
+            const today = new Date().toISOString().split('T')[0];
+
+            const newRecord = {
+                id: newId,
+                parentName: document.getElementById('parentName').value,
+                parentNIN: document.getElementById('parentNIN').value,
+                parentStatus: document.getElementById('parentStatus').value,
+                parentPhone: document.getElementById('parentPhone').value,
+                parentCCP: document.getElementById('parentCCP').value + ' / ' + document.getElementById('parentKey').value,
+                studentName: document.getElementById('studentName').value,
+                studentID: document.getElementById('studentID').value,
+                studentLevel: document.getElementById('studentLevel').value,
+                schoolName: document.getElementById('schoolName').value,
+                date: today,
+                status: 'قيد الدراسة'
+            };
+
+            applications.unshift(newRecord);
+
+            // Update Right Side Receipt Card
+            document.getElementById('receiptID').innerText = newRecord.id;
+            document.getElementById('rStudent').innerText = newRecord.studentName;
+            document.getElementById('rParent').innerText = newRecord.parentName;
+            document.getElementById('rSchool').innerText = newRecord.schoolName;
+            document.getElementById('rDate').innerText = newRecord.date;
+            document.getElementById('receiptCard').classList.remove('hidden');
+
+            // Scroll to receipt
+            document.getElementById('receiptCard').scrollIntoView({ behavior: 'smooth' });
+            
+            // Prepare Print Template Data
+            preparePrintTemplate(newRecord);
+        }
+
+        function resetForm() {
+            document.getElementById('grantForm').reset();
+            document.getElementById('previewIdentity').classList.add('hidden');
+            document.getElementById('previewIncome').classList.add('hidden');
+            document.getElementById('previewCCP').classList.add('hidden');
+        }
+
+        // Prepare Printable Official PDF View
+        function preparePrintTemplate(record) {
+            document.getElementById('pReqID').innerText = record.id;
+            document.getElementById('pDate').innerText = record.date;
+            document.getElementById('pStudentName').innerText = record.studentName;
+            document.getElementById('pStudentID').innerText = record.studentID;
+            document.getElementById('pStudentLevel').innerText = record.studentLevel;
+            document.getElementById('pSchoolName').innerText = record.schoolName;
+            document.getElementById('pParentName').innerText = record.parentName;
+            document.getElementById('pParentNIN').innerText = record.parentNIN;
+            document.getElementById('pParentStatus').innerText = record.parentStatus;
+            document.getElementById('pParentPhone').innerText = record.parentPhone;
+            document.getElementById('pParentCCP').innerText = record.parentCCP;
+
+            // Generate Barcode & QR Code
+            document.getElementById('qrcode').innerHTML = "";
+            new QRCode(document.getElementById("qrcode"), {
+                text: `MINISTRY-EDUCATION-DZ:${record.id}:${record.studentID}`,
+                width: 80,
+                height: 80
+            });
+
+            JsBarcode("#barcode", record.id, {
+                format: "CODE128",
+                width: 1.5,
+                height: 35,
+                displayValue: true
+            });
+        }
+
+        function printOfficialPDF() {
+            if (!document.getElementById('pReqID').innerText) {
+                if (applications.length > 0) preparePrintTemplate(applications[0]);
+            }
+            window.print();
+        }
+
+        // =========================================================================
+        // SCHOOL ADMIN FUNCTIONS
+        // =========================================================================
+        function renderSchoolTable() {
+            const tbody = document.getElementById('schoolTableBody');
+            const searchVal = document.getElementById('schoolSearch').value.toLowerCase();
+            const statusVal = document.getElementById('statusFilter').value;
+
+            tbody.innerHTML = '';
+
+            let filtered = applications.filter(app => {
+                const matchesSearch = app.studentName.toLowerCase().includes(searchVal) || 
+                                     app.parentName.toLowerCase().includes(searchVal) ||
+                                     app.id.toLowerCase().includes(searchVal);
+                const matchesStatus = (statusVal === 'ALL') || (app.status === statusVal);
+                return matchesSearch && matchesStatus;
+            });
+
+            // Update Statistics
+            document.getElementById('statTotal').innerText = applications.length;
+            document.getElementById('statApproved').innerText = applications.filter(a => a.status === 'مقبول').length;
+            document.getElementById('statPending').innerText = applications.filter(a => a.status === 'قيد الدراسة').length;
+            document.getElementById('statRejected').innerText = applications.filter(a => a.status === 'مرفوض').length;
+
+            if (filtered.length === 0) {
+                document.getElementById('emptySchoolState').classList.remove('hidden');
+                return;
+            } else {
+                document.getElementById('emptySchoolState').classList.add('hidden');
+            }
+
+            filtered.forEach(app => {
+                let statusBadge = '';
+                if (app.status === 'مقبول') {
+                    statusBadge = `<span class="bg-emerald-100 text-emerald-800 text-[11px] font-bold px-2.5 py-1 rounded-full flex items-center w-fit gap-1"><i class="fa-solid fa-check-circle"></i> مقبول</span>`;
+                } else if (app.status === 'مرفوض') {
+                    statusBadge = `<span class="bg-red-100 text-red-800 text-[11px] font-bold px-2.5 py-1 rounded-full flex items-center w-fit gap-1"><i class="fa-solid fa-times-circle"></i> مرفوض</span>`;
+                } else {
+                    statusBadge = `<span class="bg-amber-100 text-amber-800 text-[11px] font-bold px-2.5 py-1 rounded-full flex items-center w-fit gap-1"><i class="fa-solid fa-hourglass-start"></i> قيد الدراسة</span>`;
+                }
+
+                const tr = document.createElement('tr');
+                tr.className = "hover:bg-slate-50 transition border-b border-slate-100";
+                tr.innerHTML = `
+                    <td class="p-3.5 font-bold font-mono text-dzGreen">${app.id}</td>
+                    <td class="p-3.5">
+                        <div class="font-bold text-slate-900">${app.studentName}</div>
+                        <div class="text-[10px] text-slate-500">${app.studentLevel}</div>
+                    </td>
+                    <td class="p-3.5">
+                        <div class="font-bold">${app.parentName}</div>
+                        <div class="text-[10px] text-slate-500">${app.parentStatus}</div>
+                    </td>
+                    <td class="p-3.5 font-mono text-xs">${app.parentCCP}</td>
+                    <td class="p-3.5 text-slate-500">${app.date}</td>
+                    <td class="p-3.5">${statusBadge}</td>
+                    <td class="p-3.5 text-center no-print">
+                        <button onclick="openReviewModal('${app.id}')" class="bg-slate-100 text-slate-700 hover:bg-dzGreen hover:text-white font-bold px-3 py-1.5 rounded-lg text-xs transition flex items-center gap-1 mx-auto">
+                            <i class="fa-solid fa-eye"></i> معاينة والقرار
+                        </button>
+                    </td>
+                `;
+                tbody.appendChild(tr);
+            });
+        }
+
+        function filterSchoolTable() {
+            renderSchoolTable();
+        }
+
+        function openReviewModal(appId) {
+            selectedAppId = appId;
+            const app = applications.find(a => a.id === appId);
+            if (!app) return;
+
+            document.getElementById('mReqID').innerText = app.id;
+            document.getElementById('mStudentName').innerText = app.studentName;
+            document.getElementById('mParentName').innerText = app.parentName;
+            document.getElementById('mStatus').innerText = app.parentStatus;
+            document.getElementById('mCCP').innerText = app.parentCCP;
+            document.getElementById('mLevel').innerText = app.studentLevel;
+
+            document.getElementById('reviewModal').classList.remove('hidden');
+        }
+
+        function updateApplicationStatus(newStatus) {
+            if (!selectedAppId) return;
+            const app = applications.find(a => a.id === selectedAppId);
+            if (app) {
+                app.status = newStatus;
+                renderSchoolTable();
+                closeModal('reviewModal');
+            }
+        }
+
+        function printFullSchoolList() {
+            window.print();
+        }
+
+        function exportToCSV() {
+            let csvContent = "data:text/csv;charset=utf-8,ID,Student Name,Parent Name,CCP,Status\n";
+            applications.forEach(app => {
+                csvContent += `${app.id},${app.studentName},${app.parentName},${app.parentCCP},${app.status}\n`;
+            });
+            const encodedUri = encodeURI(csvContent);
+            const link = document.createElement("a");
+            link.setAttribute("href", encodedUri);
+            link.setAttribute("download", "قائمة_المستفيدين_منحة_5000دج.csv");
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        // Parent Search Tracking Modal logic
+        function openParentTrackingModal() {
+            document.getElementById('parentTrackModal').classList.remove('hidden');
+        }
+
+        function searchParentRequest() {
+            const val = document.getElementById('trackSearchInput').value.trim().toLowerCase();
+            const resArea = document.getElementById('trackResultArea');
+
+            const found = applications.find(a => a.id.toLowerCase() === val || a.parentNIN.includes(val));
+
+            resArea.classList.remove('hidden');
+            if (found) {
+                resArea.innerHTML = `
+                    <div class="bg-emerald-50 border border-emerald-200 p-3 rounded-xl text-xs space-y-1.5">
+                        <div class="flex justify-between font-bold text-emerald-900">
+                            <span>رمز الطلب: ${found.id}</span>
+                            <span>الحالة: ${found.status}</span>
+                        </div>
+                        <p class="text-slate-700">التلميذ: <strong>${found.studentName}</strong></p>
+                        <p class="text-slate-700">المؤسسة: ${found.schoolName}</p>
+                        <button onclick="preparePrintTemplate(applications.find(a=>a.id==='${found.id}')); printOfficialPDF();" class="mt-2 w-full bg-dzGreen text-white py-1.5 font-bold rounded-lg text-xs">
+                            <i class="fa-solid fa-print"></i> طباعة الوصل الرسمية PDF
+                        </button>
+                    </div>
+                `;
+            } else {
+                resArea.innerHTML = `<div class="text-xs text-red-600 bg-red-50 p-3 rounded-xl text-center font-bold">لم يتم العثور على أي طلب مطابق للبيانات المدخلة.</div>`;
+            }
+        }
+    </script>
+</body>
+</html>
